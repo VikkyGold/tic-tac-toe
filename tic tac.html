@@ -15,14 +15,22 @@
             <div class="shadow bg bg-dark" id="gdiv" style="width:320px;   padding-left:100px; padding-bottom:50px; border-radius:10px; background-color: #EFEFEF;">
                 <center>
                     <div id="ggdiv" style="margin-left: -3em;">
-                        <div id="winnerx" class="text-light bg-dark mt-5 pl-3" style="font-size:17px; font-style:italic; border-radius:20px;margin-left:-40px; background-color: #EFEFEF;"><b>Input players names and click start to play game</b></div>
-                        <div id="func" style="padding-top:20px; margin-right:25px; color:#F2AA4CFF " class="d-flex margin-left:20px;" >
-                            <h6 style="margin-right:20px; margin-left:-20px;"><i>Player Name 1</i><input style="border-radius:20px; width:130px;" id="pname"> </input></h6>
-                            <h6><i >Player Name 2</i><input style="border-radius:20px;width:130px;" id="pname2"></input></h6> <br>
-                           
-                        </div> 
-                           <button style="background-color:#F2AA4CFF; width:200px; border-radius:5px; margin-right:40px;"class="" onclick="play()">Start</button>
-              
+                        <div id="winnerx" class="text-light bg-dark mt-5 px-3"
+                            style="font-size:17px; font-style:italic; border-radius:20px;margin-left:-40px; background-color: #EFEFEF;">
+                            <b>Input players names and click start to play game</b>
+                        </div>
+                        <div id="func" style="padding-top:20px; color:#F2AA4CFF; margin-left: -20px; margin-right:40px;">
+                            <div>
+                                <i class="mr-auto w-100 d-block text-left mb-1">Player Name 1</i>
+                                <input class="w-100 rounded border-none" id="pname"> </input>
+                            </div>
+                            <div>
+                                <i class="mr-auto w-100 d-block text-left mb-1">Player Name 2</i>
+                                <input class="w-100 rounded border-none" id="pname2"> </input>
+                            </div>
+                            <button style="background-color:#F2AA4CFF;" class="w-100 mb-2 mt-3 rounded" onclick="play()">Start</button>
+                        </div>
+
                         <div id="div1" style="margin-left:-60px;">
                             <button onclick=" func_p(event)"style="width:80px; height: 80px; font-size:50px;"  id="inp1"></button>
                             <button onclick="func_p(event)" style="width:80px; height: 80px; font-size: 50px;" id="inp2"></button>
