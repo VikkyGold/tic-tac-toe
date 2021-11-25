@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=+1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="bootstrap-4.5.0-dist/css/bootstrap.css">
+            
+            
+    </head>
+    <body class="bg" style="background-color:#101820FF;">
+        <center>
+
+            <div class="shadow bg bg-dark" id="gdiv" style="width:320px;   padding-left:100px; padding-bottom:50px; border-radius:10px; background-color: #EFEFEF;">
+                <center>
+                    <div id="ggdiv" style="margin-left: -3em;">
+                        <div id="winnerx" class="text-light bg-dark mt-5 pl-3" style="font-size:17px; font-style:italic; border-radius:20px;margin-left:-40px; background-color: #EFEFEF;"><b>Input players names and click start to play game</b></div>
+                        <div id="func" style="padding-top:20px; margin-right:25px; color:#F2AA4CFF " class="d-flex margin-left:20px;" >
+                            <h6 style="margin-right:20px; margin-left:-20px;"><i>Player Name 1</i><input style="border-radius:20px; width:130px;" id="pname"> </input></h6>
+                            <h6><i >Player Name 2</i><input style="border-radius:20px;width:130px;" id="pname2"></input></h6> <br>
+                           
+                        </div> 
+                           <button style="background-color:#F2AA4CFF; width:200px; border-radius:5px; margin-right:40px;"class="" onclick="play()">Start</button>
+              
+                        <div id="div1" style="margin-left:-60px;">
+                            <button onclick=" func_p(event)"style="width:80px; height: 80px; font-size:50px;"  id="inp1"></button>
+                            <button onclick="func_p(event)" style="width:80px; height: 80px; font-size: 50px;" id="inp2"></button>
+                             <button  onclick=" func_p(event)" style="width:80px; height:80px; font-size: 50px;" id="inp3"></button>
+        
+                        </div>
+                        <div id="div2" style="margin-left:-60px;">
+                            <button  onclick=" func_p(event);" style="width:80px; height:80px; font-size: 50px;" id="inp4"></button>
+                            <button  onclick=" func_p(event);" style="width:80px; height:80px; font-size: 50px;" id="inp5"></button>
+                            <button  onclick="func_p(event)" style="width:80px; height: 80px; font-size: 50px;" id="inp6"></button>
+                        </div>
+                        <div id="div3" style="margin-left:-60px;"> 
+                            <button  onclick=" func_p(event);" style="width:80px; height:80px; font-size:50px;" id="inp7"> </button>
+                            <button  onclick=" func_p(event);" style="width:80px; height:80px; font-size: 50px;" id="inp8"></button>
+                            <button  onclick=" func_p(event);" style="width:80px; height:80px; font-size: 50px;" id="inp9"></button> 
+        
+                        </div>
+                       <div class="d-flex " id="player" style="margin-left:-40px; color: #F2AA4CFF;">
+                           <h6>Player 1 <i id="play1" style="margin-left:20px;"></i></h6><b id="count1" style="margin-left:60px"><input value=0 id="val1" style="width: 20px; background-color:#6C757D; color: white; margin-left:-2em; border-color:white"></input></b>
+                           <b style="color: white; margin-right:10px;">:</b><b id="count2" ><input value=0 id="val2" style="width:20px;  background-color:#6C757D; color: white; border-color:white"></input></b><h6 style="margin-left:2em">Player 2 <i id="play2"></i></h6>
+    
+                       
+                          
+                    </div>
+                   
+                            <div class="d-flex" id="func2">
+                                <button onclick="replay()" style="margin-left:-30px;">Replay</button> <button id="endgame" class="" style="margin-left:8em;" onclick="func_endgame()">End Game</button>
+                            </div>
+        
+                    </div>
+                   <marquee direction="left" style="color:black; font-size:40px;" id="mar">INPUT PLAYERS NAMES AND CLICK START TO PLAY THE TIC-TAC-TOE GAME <marquee/>
+                </div>
+                
+                </center>
+                      
+                       
+                
+            <script> 
+                 let score=0;
+                 let activeplay="x";
+                //  let vall=val1.value;
+                //  val1.value=0;
+                //  val2.value=0;
+                
+                   
+                function func_p(e)
+                {
+                   
+                        endgame.innerHTML="End Game"
+                    
+                            if( play1.innerHTML=="" && play2.innerHTML==""){
+                                e.target.innerText=="";
+                                } 
+                        if(winnerx.innerHTML=="")
+                        {
+                        
+                        e.target.innerText=activeplay
+
+                        }
+                
+                        if(activeplay=="x"){
+                            activeplay="o"
+
+                        }
+                        else{
+                        activeplay="x"
+                    
+                        }
+                       
+                      
+                    // PLAYER X
+                    if (val1.value!=0 || val2.value!=0&& e.target.innerText!="" && winnerx.innerHTML!="") 
+                        if( inp1.innerText=="x" & inp2.innerText=="x" & inp3.innerText=="x"){
+                            winnerx.innerHTML=`${pname.value}  <i>Is The Winner</i>`;
+                            val1.value++;
+                            if (e.target.innerText=="" && val1.value!=0) {
+                                val1.value=+val1.value-1;
+                            }
+                              
+                        console.log(val1.value); 
+                     }
+                     
+                     
+                         
+                     if(inp1.innerText=="x" & inp4.innerText=="x" && inp7.innerText=="x"){
+                                winnerx.innerHTML=`${pname.value}  <i>Is The Winner</i>`;
+                                val1.value++;
+                                if (e.target.innerText=="" && val1.value!=0) {
+                                val1.value=+val1.value-1;
+                            }
+                        console.log(val1.value);
+                            
+                                
+                            } 
+                            if(inp4.innerText=="x" & inp5.innerText=="x" && inp6.innerText=="x"){
+                                winnerx.innerHTML=`${pname.value}  <i>Is The Winner</i>`;
+                                val1.value++;
+                                if (e.target.innerText=="" && val1.value!=0) {
+                                val1.value=+val1.value-1;
+                            }
+                        console.log(val1.value);
+                            
+                                
+                            } 
+                            if(inp7.innerText=="x" & inp8.innerText=="x" && inp9.innerText=="x"){
+                                winnerx.innerHTML=`${pname.value}  <i>Is The Winner</i>`;
+                                val1.value++;
+                                if (e.target.innerText=="" && val1.value!=0) {
+                                val1.value=+val1.value-1;
+                            }
+                        console.log(val1.value);
+                            
+                                
+                            } 
+                    
+                    
+                    
+                            if(inp2.innerText=="x" & inp5.innerText=="x" & inp8.innerText=="x"){
+                                winnerx.innerHTML=`${pname.value}  <i>Is The Winner</i>`;
+                                val1.value++;
+                                if (e.target.innerText=="" && val1.value!=0) {
+                                val1.value=+val1.value-1;
+                            }
+                        console.log(val1.value);
+                            
+                                
+                            }
+                    
+                            if(inp3.innerText=="x" & inp6.innerText=="x" & inp9.innerText=="x"){
+                                winnerx.innerHTML=`${pname.value}  <i>Is The Winner</i>`;
+                                val1.value++;
+                                if (e.target.innerText=="" && val1.value!=0) {
+                                val1.value=+val1.value-1;
+                            }
+                        console.log(val1.value);
+                                
+                                
+                            } 
+                    
+                        
+                    
+                            if(inp1.innerText=="x" & inp5.innerText=="x" & inp9.innerText=="x"){
+                                winnerx.innerHTML=`${pname.value}  <i>Is The Winner</i>`;
+                            val1.value++;
+                            if (e.target.innerText=="" && val1.value!=0) {
+                                val1.value=+val1.value-1;
+                            }
+                        console.log(val1.value);
+                            }
+                        
+                            
+                            if( inp3.innerText=="x" & inp5.innerText=="x" & inp7.innerText=="x"){
+                            winnerx.innerHTML=`${pname.value}  <i>Is The Winner</i>`; 
+                            val1.value++;
+                            if (e.target.innerText=="" && val1.value!=0) {
+                                val1.value=+val1.value-1;
+                            }
+                        console.log(val1.value); }
+                        
+                    
+                        
+                        
+                            // PLAYER O
+                            // if (val2.value!=0  || val1.value!=0 && e.target.innerText!="" && winnerx.innerHTML!="") {
+                            //         val2.value=+val2.value-1;
+                            //     }
+                            if( inp1.innerText=="o" & inp2.innerText=="o" & inp3.innerText=="o"){
+                        winnerx.innerHTML=`${pname2.value} <i>Is The Winner<i/>`; 
+                            val2.value++;
+                            if (e.target.innerText=="" && val2.value!=0) {
+                                val2.value=+val2.value-1;
+                            }
+                        console.log(val2.value); 
+                        }
+        
+
+                            if(inp1.innerText=="o" & inp4.innerText=="o" & inp7.innerText=="o"){
+                            winnerx.innerHTML=`${pname2.value} <i>Is The Winner<i/>`;
+                                val2.value++;
+                                if (e.target.innerText=="" && val2.value!=0) {
+                                val2.value=+val2.value-1;
+                            }
+                        console.log(val2.value);
+                            
+                            }      
+                            if(inp3.innerText=="o" & inp6.innerText=="o" & inp9.innerText=="o"){
+                            winnerx.innerHTML=`${pname2.value} <i>Is The Winner<i/>`;
+                                val2.value++;
+                                if (e.target.innerText=="" && val2.value!=0) {
+                                val2.value=+val2.value-1;
+                            }
+                        console.log(val2.value);
+                            }
+                    
+                            if(inp4.innerText=="o" & inp5.innerText=="o" & inp6.innerText=="o"){
+                            winnerx.innerHTML=`${pname2.value} <i>Is The Winner<i/>`;
+                                val2.value++;
+                                if (e.target.innerText=="" && val2.value!=0) {
+                                val2.value=+val2.value-1;
+                            }
+                        console.log(val2.value);
+                            
+                            }
+                    
+                            if(inp7.innerText=="o" & inp8.innerText=="o" & inp9.innerText=="o"){
+                            winnerx.innerHTML=`${pname2.value} <i>Is The Winner<i/>`;
+                                val2.value++;
+                                if (e.target.innerText=="" && val2.value!=0) {
+                                val2.value=+val2.value-1;
+                            }
+                        console.log(val2.value);
+                            
+                            }
+                    
+                            if(inp1.innerText=="o" & inp5.innerText=="o" & inp9.innerText=="o"){
+                            winnerx.innerHTML=`${pname2.value} <i>Is The Winner<i/>`;
+                                val2.value++;
+                                if (e.target.innerText=="" && val2.value!=0) {
+                                val2.value=+val2.value-1;
+                            }
+                        console.log(val2.value);
+                        
+                                
+                            }
+                            if(inp2.innerText=="o" & inp5.innerText=="o" & inp8.innerText=="o"){
+                            winnerx.innerHTML=`${pname2.value} <i>Is The Winner<i/>`;
+                                val2.value++;
+                                if (e.target.innerText=="" && val2.value!=0) {
+                                val2.value=+val2.value-1;
+                            }
+                             console.log(val2.value);
+                            }
+                            if( inp3.innerText=="o" & inp5.innerText=="o" & inp7.innerText=="o"){
+                            winnerx.innerHTML=`${pname2.value} <i>Is The Winner<i/>`; 
+                                val2.value++;
+                                if (e.target.innerText=="" && val2.value!=0) {
+                                val2.value=+val2.value-1;
+                            }
+                            console.log(val2.value); 
+                        
+                            } 
+                            
+                           
+                           
+                    
+                            //DRAW
+                                    if(inp1.innerText=="x" & inp2.innerText=="o" & inp3.innerText=="x" && inp4.innerText=="x" && inp5.innerText=="o" && inp6.innerText=="o" && inp7.innerText=="o" && inp8.innerText=="x"&& inp9.innerText=="o" ||
+                                    inp1.innerText=="x" & inp2.innerText=="o" & inp3.innerText=="x" && inp4.innerText=="o" && inp5.innerText=="x" && inp6.innerText=="o" && inp7.innerText=="o" && inp8.innerText=="x"&& inp9.innerText=="o")   
+                                    {
+                                        winnerx.innerHTML=" THE GAME IS DRAW";
+                                    }
+                                    if(inp1.innerHTML!=""&&inp2.innerHTML!=""&&inp3.innerHTML!=""&&inp4.innerHTML!=""&&inp5.innerHTML!=""&&inp6. innerHTML!=""&&inp7.innerHTML!=""&&inp8.innerHTML!=""&&inp9.innerHTML!="" && winnerx.innerHTML=="")
+                                    {
+                                    winnerx.innerHTML="<b>The Game Is Draw</b>";
+                                    }
+                                
+                            
+                        
+                        
+                        
+                    
+                }
+              
+                     function play(){
+                        if(pname.value=="" && pname2.value== "" || pname.value!="" && pname2.value==""||pname.value2!="" && pname.value==""){
+                            winnerx.innerHTML="<b>Input players names and click start to play game</b>"; 
+                            inp1.innerText="";
+                            inp2.innerText="";
+                            inp3.innerText="";
+                            inp4.innerText="";
+                            inp5.innerText="";
+                            inp6.innerText="";
+                            inp7.innerText="";
+                            inp8.innerText="";
+                            inp9.innerText="";
+                            alert("You can't play the game,input players name(s) and click start to play game");
+                           
+                        }
+                    
+                      else{
+                      
+                            play1.innerHTML=pname.value;
+                            play2.innerHTML=pname2.value;
+                            winnerx.innerHTML=""; 
+                            mar.innerHTML="";
+                           
+                      }
+                   
+                    
+                    
+
+                    }
+                    function func_endgame(){
+                        endgame.innerHTML="End Game";
+                        if(play1.innerHTML=="" && play2.innerHTML=="")
+                        {
+                            inp1.innerText="";
+                        inp2.innerText="";
+                        inp3.innerText="";
+                        inp4.innerText="";
+                        inp5.innerText="";
+                        inp6.innerText="";
+                        inp7.innerText="";
+                        inp8.innerText="";
+                        inp9.innerText="";
+                             alert("You can't play the game,input players name(s) and click start to play game");;
+                        inp1.innerText="";
+                        inp2.innerText="";
+                        inp3.innerText="";
+                        inp4.innerText="";
+                        inp5.innerText="";
+                        inp6.innerText="";
+                        inp7.innerText="";
+                        inp8.innerText="";
+                        inp9.innerText="";
+                       
+                        
+                        }
+                      
+                       
+                        else{
+                        alert("Do you really want to end the game? if yes,click okay.");
+                        endgame.innerHTML="End Game";
+                        play1.innerHTML="";
+                       play2.innerHTML="";
+                        inp1.innerText="";
+                        inp2.innerText="";
+                        inp3.innerText="";
+                        inp4.innerText="";
+                        inp5.innerText="";
+                        inp6.innerText="";
+                        inp7.innerText="";
+                        inp8.innerText="";
+                        inp9.innerText="";
+                        val1.value=0;
+                            val2.value=0; 
+                            pname.value="";
+                            pname2.value=""; 
+                            winnerx.innerHTML="<b>Input players names and click start to play game</b>"; 
+                            mar.innerHTML="INPUT PLAYERS NAMES AND CLICK START TO PLAY THE TIC-TAC-TOE GAME";
+                        } 
+                  
+                       
+                       
+                   
+                    }
+                    function replay(){
+                       
+                        inp1.innerText="";
+                        inp2.innerText="";
+                        inp3.innerText="";
+                        inp4.innerText="";
+                        inp5.innerText="";
+                        inp6.innerText="";
+                        inp7.innerText="";
+                        inp8.innerText="";
+                        inp9.innerText="";
+
+                       
+                        if(play1.innerHTML=="" && play2.innerHTML== ""){
+                            winnerx.innerHTML="<b>Input players names and click start to play game</b>"; 
+                            inp1.innerText="";
+                        inp2.innerText="";
+                        inp3.innerText="";
+                        inp4.innerText="";
+                        inp5.innerText="";
+                        inp6.innerText="";
+                        inp7.innerText="";
+                        inp8.innerText="";
+                        inp9.innerText="";
+                        alert("You can't play the game,input players name(s) and click start to play game");
+                        inp1.innerText="";
+                        inp2.innerText="";
+                        inp3.innerText="";
+                        inp4.innerText="";
+                        inp5.innerText="";
+                        inp6.innerText="";
+                        inp7.innerText="";
+                        inp8.innerText="";
+                        inp9.innerText="";
+                          
+                        }
+                        else{
+                            winnerx.innerHTML="";
+                            play();
+                        }
+                     
+
+                       
+                       
+                    }
+                 
+                   
+               
+           
+               
+            </script> 
+
+
+        </center>
+        
+          
+           
+    </body>
+</html>
